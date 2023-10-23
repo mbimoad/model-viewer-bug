@@ -12,8 +12,15 @@
 
 <body>
   <!-- <model-viewer> HTML element -->
-  <model-viewer  autoplay ar ar-modes="webxr scene-viewer quick-look" camera-controls
-     shadow-intensity="1">
+  <model-viewer 
+    src="./assets/digitaltwin.glb" 
+    poster="./assets/digitaltwin.webp" 
+    autoplay ar ar-modes="webxr scene-viewer quick-look" 
+    camera-controls
+    shadow-intensity="1"
+    quick-look-browsers="safari chrome"
+  >
+  
     <div class="progress-bar hide" slot="progress-bar">
       <div class="update-bar"></div>
     </div>

@@ -1,23 +1,36 @@
 const modelViewer = document.querySelector('model-viewer');
+const myarbutton  = document.querySelector('.myar-button'); 
+
 
 // Handles loading the events for <model-viewer>'s slotted progress bar
-const myarbutton = document.querySelector('.myar-button'); 
+function showArButton() {
+  console.log(myarbutton); 
+  myarbutton.setAttribute("slot", "ar-button");
+  myarbutton.style.display = 'unset';
+}
+
+
+
+
 
 
 const onProgress = (event) => {
   const progressBar = event.target.querySelector('.progress-bar');
   const updatingBar = event.target.querySelector('.update-bar');
   updatingBar.style.width = `${event.detail.totalProgress * 100}%`;
-  if (event.detail.totalProgress === 1) {
+  console.log(event.detail.totalProgress); 
+  if (event.detail.totalProgress == 1) {
     progressBar.classList.add('hide');
     event.target.removeEventListener('progress', onProgress);
-    const modelviewer = document.querySelector('model-viewer');
-    myarbutton.setAttribute("slot", "ar-button");
-    myarbutton.style.display = 'unset';
+    showArButton(); 
   } else {
     progressBar.classList.remove('hide');
   }
 };
+
+
+
+
 
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -65,20 +78,16 @@ if (!isMobile) {
 
 // New JS 
 // Get Desktop or Mobile 
-const responsiveModel = () => {
+function responsiveModel() {
   if(isMobile) {
+    document.querySelector('model-viewer').addEventListener('progress', onProgress);
     modelViewer.setAttribute("src", "./assets/medicalbag.glb"); 
     modelViewer.setAttribute("poster", "./assets/medicalbag.webp"); 
   } else {
+    document.querySelector('model-viewer').addEventListener('progress', onProgress);
     modelViewer.setAttribute("src", "./assets/digitaltwin.glb"); 
     modelViewer.setAttribute("poster", "./assets/digitaltwin.webp"); 
   }
 }
-responsiveModel(); 
-window.onload = function() {
-  modelViewer.addEventListener('progress', onProgress);
-  responsiveModel(); 
-}
-window.onresize = function() {
-  responsiveModel(); 
-}
+window.onload   = function() {responsiveModel()}
+window.onresize = function() {responsiveModel()}
