@@ -11,9 +11,6 @@ function showArButton() {
 
 
 
-
-
-
 const onProgress = (event) => {
   const progressBar = event.target.querySelector('.progress-bar');
   const updatingBar = event.target.querySelector('.update-bar');
@@ -80,14 +77,22 @@ if (!isMobile) {
 // Get Desktop or Mobile 
 function responsiveModel() {
   if(isMobile) {
-    document.querySelector('model-viewer').addEventListener('progress', onProgress);
     modelViewer.setAttribute("src", "./assets/medicalbag.glb"); 
     modelViewer.setAttribute("poster", "./assets/medicalbag.webp"); 
   } else {
-    document.querySelector('model-viewer').addEventListener('progress', onProgress);
     modelViewer.setAttribute("src", "./assets/digitaltwin.glb"); 
     modelViewer.setAttribute("poster", "./assets/digitaltwin.webp"); 
   }
 }
-window.onload   = function() {responsiveModel()}
+
+// Inject
+responsiveModel(); 
+
+// Load
+window.onload = function() {
+  document.querySelector('model-viewer').addEventListener('progress', onProgress);
+  responsiveModel()
+}
+
+// Resize 
 window.onresize = function() {responsiveModel()}
