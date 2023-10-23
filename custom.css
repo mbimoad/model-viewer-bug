@@ -1,0 +1,249 @@
+:root {
+    --beige: #f8f8c1; 
+    --yellow: #ffff00;
+    --red: #ff0000; 
+    --black: #000000;
+    --active: #ffb900;
+  }
+
+
+  .hamburger {
+  
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 25px;
+    height: 25px;
+    border-radius: 100px 0px 0px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: -27px;
+    background:white;
+    box-shadow: 0px 0 3px 0 #999;
+  }
+  
+  .hamburger img {
+    width: 50%;
+    transform: scale(-1);
+  }
+  
+  
+  .sidebar {
+    transition: all 200ms ease 0s;
+    padding: 0 5px;
+    height: 100%; 
+    width: 250px; 
+    box-shadow: -1px 0 5px #ddd;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: white; 
+  }
+  
+  
+  .sidebar.show {
+    transform: translate(100%, 0);
+  }
+  
+  .floating-colors {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .floating-colors .color {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .floating-colors h2 {
+    font-size: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:#333;
+    text-transform: uppercase;
+  }
+  
+  .floating-colors .icon {
+    width: 40px; 
+    cursor: pointer;
+    transition: all 200ms ease 0s;
+  }
+  
+  .floating-colors .icon.active {
+    position: relative;
+    filter:brightness(110%) contrast(100%);
+  }
+  
+  .floating-colors .icon.active::after {
+    left: 0;
+    border-radius: 50px;
+    display: inline-block;
+    position: absolute;
+    bottom: -5px;
+    content: '';
+    width: 100%;
+    height: 3px; 
+    background: var(--active);
+  }
+  
+  
+  
+  .animate {
+    transform: scale(0);
+    opacity: 0;
+    transition: all 200ms ease 0s;
+  }
+  
+  .show {
+    transform: scale(1);
+    opacity: 1;
+  }
+  
+  
+  
+  
+  
+  .floating-colors .icon img {
+    width: 100%;
+  }
+  
+  
+  
+  @media screen and (max-width: 930px) {
+    .floating-legs .icon {
+      width: 25px; 
+      height: 25px; 
+      cursor: pointer;
+      transition: all 200ms ease 0s;
+    } .floating-colors .icon {
+      width: 30px; 
+      cursor: pointer;
+      transition: all 200ms ease 0s;
+    } .sidebar h3 {
+      margin-top: 50px;
+      font-size: 30px;
+    } .sidebar {
+      width: 190px;
+    } #openDiv  {
+      right: 17%; 
+    } .sidebar p {
+      padding: 10px;
+      margin-top: 15px;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+  }
+  
+  
+  
+  
+  @media screen and (max-width: 767px) {
+    .sidebar.show {
+      transform: translate(0, 0);
+    } .hamburger {
+      display: none;
+    } 
+    .sidebar {
+      position: static;
+      height: unset;
+      width: 100%;
+      padding: 5px 0 15px 0;
+      display: flex;
+      justify-content: space-around;
+      box-shadow: unset;
+    } .LogoImg {
+      background:white; 
+    } .sidebar p {
+      display: none;
+    } .sidebar h3 {
+      display: none;
+    } .floating-legs {
+      margin-top: unset;
+    } .floating-colors h2,
+    .floating-legs h2 {
+      font-size: 13px;
+      margin-top: 5px; 
+    }
+  
+    .floating-legs .icon {
+      width: 25px; 
+      height: 25px; 
+      cursor: pointer;
+      transition: all 200ms ease 0s;
+    } .floating-colors .icon {
+      width: 25px; 
+      cursor: pointer;
+      transition: all 200ms ease 0s;
+    } 
+  }
+  
+  
+  
+  .myposter {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    justify-self: center;
+    margin: auto;
+    width: 55%;
+    display: none;
+    transition: all 200ms ease 0s;
+  } 
+  
+  /* Tablet  */
+  @media screen and (max-width: 1010px) {.myposter {width: 390px;}}
+  
+  
+  
+  /* Mobile */
+  @media screen and (max-width: 760px) {.myposter {width: 45%;}}
+  @media screen and (max-width: 750px) {.myposter {width: 46%;}}
+  @media screen and (max-width: 740px) {.myposter {width: 47%;}}
+  @media screen and (max-width: 730px) {.myposter {width: 48%;}}
+  @media screen and (max-width: 720px) {.myposter {width: 49%;}}
+  @media screen and (max-width: 710px) {.myposter {width: 50%;}}
+  @media screen and (max-width: 700px) {.myposter {width: 51%;}}
+  @media screen and (max-width: 690px) {.myposter {width: 52%;}}
+  @media screen and (max-width: 680px) {.myposter {width: 53%;}}
+  @media screen and (max-width: 670px) {.myposter {width: 54%;}}
+  @media screen and (max-width: 660px) {.myposter {width: 55%;}}
+  @media screen and (max-width: 650px) {.myposter {width: 56%;}}
+  @media screen and (max-width: 640px) {.myposter {width: 57%;}}
+  @media screen and (max-width: 630px) {.myposter {width: 58%;}}
+  @media screen and (max-width: 620px) {.myposter {width: 59%;}}
+  @media screen and (max-width: 610px) {.myposter {width: 60%;}}
+  @media screen and (max-width: 600px) {.myposter {width: 61%;}}
+  @media screen and (max-width: 590px) {.myposter {width: 59%;}}
+  @media screen and (max-width: 580px) {.myposter {width: 60%;}}
+  @media screen and (max-width: 570px) {.myposter {width: 61%;}}
+  @media screen and (max-width: 560px) {.myposter {width: 62%;}}
+  @media screen and (max-width: 550px) {.myposter {width: 63%;}}
+  @media screen and (max-width: 540px) {.myposter {width: 64%;}}
+  @media screen and (max-width: 530px) {.myposter {width: 60%;}}
+  @media screen and (max-width: 520px) {.myposter {width: 61%;}}
+  @media screen and (max-width: 510px) {.myposter {width: 62%;}}
+  @media screen and (max-width: 500px) {.myposter {width: 59%;}}
+  @media screen and (max-width: 490px) {.myposter {width: 60%;}}
+  @media screen and (max-width: 480px) {.myposter {width: 61%;}}
+  @media screen and (max-width: 470px) {.myposter {width: 62%;}}
+  @media screen and (max-width: 460px) {.myposter {width: 63%;}}
+  @media screen and (max-width: 450px) {.myposter {width: 60%;}}
+  @media screen and (max-width: 440px) {.myposter {width: 61%;}}
+  @media screen and (max-width: 430px) {.myposter {width: 62%;}}
+  @media screen and (max-width: 420px) {.myposter {width: 63%;}}
+  @media screen and (max-width: 410px) {.myposter {width: 60%;}}
+  @media screen and (max-width: 400px) {.myposter {width: 61%;}}
+  @media screen and (max-width: 390px) {.myposter {width: 62%;}}
+  @media screen and (max-width: 380px) {.myposter {width: 63%;}}
+  @media screen and (max-width: 370px) {.myposter {width: 60%;}}
+  @media screen and (max-width: 360px) {.myposter {width: 61%;}}
+  @media screen and (max-width: 350px) {.myposter {width: 62%;}}
+  @media screen and (max-width: 340px) {.myposter {width: 63%;}}
+  @media screen and (max-width: 330px) {.myposter {width: 60%;}}
+  @media screen and (max-width: 320px) {.myposter {width: 61%;}}
+  @media screen and (max-width: 310px) {.myposter {width: 62%;}}
+  @media screen and (max-width: 300px) {.myposter {width: 63%;}}
