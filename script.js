@@ -82,15 +82,3 @@ window.onload = function() {
 window.onresize = function() {
   responsiveModel(); 
 }
-// Cek Device Apple Or Not 
-const isAppleDevice = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-if (isAppleDevice) {
-  console.log('Ini adalah perangkat Apple (iPhone atau iPad).');
-} else {
-  console.log('Ini bukan perangkat Apple.');
-}
-// Check Device Support AR Viewer Or Not 
-document.addEventListener('DOMContentLoaded', function () {
-    // Check IF Device Support AR Viewer Or Not
-    console.log(modelViewer.canActivateAR)
-})  
