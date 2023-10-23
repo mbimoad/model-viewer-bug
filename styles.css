@@ -1,3 +1,7 @@
+.myar-button {
+  display: none;
+}
+
 :not(:defined)>* {
   display: none;
 }

@@ -7,14 +7,13 @@
   <meta name="description" content="AR Your Commerce - Dreaver S340">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link type="text/css" href="./styles.css" rel="stylesheet" />
-  <link type="text/css" href="./custom.css" rel="stylesheet" />
   <link rel="icon" type="image/x-icon" href="https://www.aryourcommerce.com/images/favico-aryourcommerce.ico">
 </head>
 
 <body>
   <!-- <model-viewer> HTML element -->
   <model-viewer src="assets/digitaltwin.glb" autoplay ar ar-modes="webxr scene-viewer quick-look" camera-controls
-    poster="assets/poster.webp" shadow-intensity="1">
+    poster="assets/digitaltwin.webp" shadow-intensity="1">
     <div class="progress-bar hide" slot="progress-bar">
       <div class="update-bar"></div>
     </div>
@@ -24,42 +23,7 @@
       </a>
     </div>
 
-
-    <!-- Add Sidebar -->
-    <section class="sidebar">
-      <div class="hamburger">
-        <img src="assets/arrow.svg">
-      </div>
-
-      <h3>GLB</h3>
-  
-      <div class="floating-colors">
-        <h2>Choose Other Glb</h2>
-        <div class="color">
-          <div class="icon active">
-            <img class="icon-img beige">
-          </div>
-          <div class="icon">
-            <img class="icon-img beige">
-          </div>
-          <div class="icon">
-            <img class="icon-img beige">
-          </div>
-          <div class="icon">
-            <img class="icon-img beige">
-          </div>
-        </div>
-      </div>
-  
-      
-      <p>Select a configuration above, click View in your space, and see and engage with an accurate size and scale of our 3D model right in your environment.</p>
-  </section>  
-    <!-- End Of Sidebar -->
-
-
-
-
-    <button slot="ar-button" id="ar-button">
+    <button class="myar-button" id="ar-button">
       Bekijk in AR
     </button>
 
